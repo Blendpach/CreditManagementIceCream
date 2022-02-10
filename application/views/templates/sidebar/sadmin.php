@@ -119,7 +119,12 @@
                 <p>Collectors Maangement</p>
               </a>
             </li>
-
+            <li class="nav-item">
+              <a href="<?php echo base_url(); ?>portal/setup/action/add_product" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Product Maangement</p>
+              </a>
+            </li>
 
 
           </ul>

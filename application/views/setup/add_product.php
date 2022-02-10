@@ -125,7 +125,7 @@
 
                                                     <div class="col">
 
-                                                        <a class="btn btn btn-primary " href="<?php echo '' . base_url('portal/setup/action/edit_collector?emp_id=') . $get_pros->pro_id . ''; ?>">Edit</a>
+                                                        <a class="btn btn btn-primary " href="<?php echo '' . base_url('portal/setup/action/edit_product?pro_id=') . $get_pros->pro_id . ''; ?>">Edit</a>
 
                                                     </div>
 
