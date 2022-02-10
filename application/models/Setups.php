@@ -70,6 +70,9 @@ class Setups extends CI_Model
         $emp_contact = $this->input->post('emp_contact');
         $emp_email = $this->input->post('emp_email');
         $emp_cid = $this->session->userdata('passed_user_national');
+        $emp_basic = $this->input->post('emp_salary');
+        $emp_rate = $this->input->post('emp_bonus');
+
 
         $insert_to_emp = array(
 
@@ -81,6 +84,8 @@ class Setups extends CI_Model
             'emp_email' => $emp_email,
             'emp_cid' => $emp_cid,
             'emp_lorry' => $emp_lorry,
+            'emp_basic' => $emp_basic,
+            'emp_rate' => $emp_rate,
 
         );
 
