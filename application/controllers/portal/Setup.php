@@ -144,15 +144,17 @@ class Setup extends CI_Controller
             $pro_validate = $this->setups->pro_validate();
 
             if ($pro_validate) {
+                $this->session->set_flashdata('success', 'Please Check SKU use for the product');
+                redirect('portal/setup/action/add_product');
+              
+            } else {
 
                 if ($this->setups->add_pro()) {
                     // set flash data
                     $this->session->set_flashdata('success', 'New Product Added Successfully');
                     redirect('portal/setup/action/add_product');
-                }
-            } else {
-                $this->session->set_flashdata('success', 'Please Check SKU use for the product');
-                redirect('portal/setup/action/add_product');
+                } 
+               
             }
         }
     }

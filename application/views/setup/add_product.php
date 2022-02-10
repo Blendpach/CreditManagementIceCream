@@ -6,7 +6,7 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-                        Collector Management
+                        Product Management
                     </h1>
                 </div>
                 <div class="col-sm-6">
@@ -37,7 +37,7 @@
                             <!-- <h3 class="card-title">DataTable with default features</h3> -->
                             <div align="right">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                                    Add New Collector
+                                    Add New Product
                                 </button>
 
                             </div>
@@ -173,7 +173,7 @@
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Add Collector</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add Product</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -195,7 +195,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="user_eno">Product Description</label>
-                                <input type="number" class="form-control" id="pro_desc" name="pro_desc" placeholder="Enter Product Description">
+                                <textarea   rows="5" class="form-control" id="pro_desc" name="pro_desc" placeholder="Enter Product Description"> </textarea>
                             </div>
                             <div class="form-group">
 
