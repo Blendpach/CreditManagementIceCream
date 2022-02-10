@@ -18,11 +18,11 @@
     </section>
 
     <?php
-    date_default_timezone_set("Asia/Colombo");
-    // Return current date from the remote server
-    $date = date('d-m-y h:i:s');
+date_default_timezone_set("Asia/Colombo");
+// Return current date from the remote server
+$date = date('d-m-y h:i:s');
 
-    ?>
+?>
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
@@ -47,7 +47,7 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <!-- <th>ID</th> -->
                                         <th>NIC</th>
                                         <th>Name</th>
                                         <th>Lorry</th>
@@ -64,17 +64,17 @@
                                 <tbody>
                                     <?php $i = 1;
 
-                                    foreach ($get_emp as $get_emps) {
+foreach ($get_emp as $get_emps) {
 
-                                        // filter by role ID
-                                        if ($get_emps->emp_role_id == EMP_ROLE_SALES_REP) {
+    // filter by role ID
+    if ($get_emps->emp_role_id == EMP_ROLE_SALES_REP) {
 
-                                    ?>
+        ?>
 
                                             <tr>
-                                                <td>
+                                                <!-- <td>
                                                     <?php echo $i; ?>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <?php echo $get_emps->emp_nic; ?>
                                                 </td>
@@ -92,11 +92,11 @@
                                                 </td>
 
                                                 <td>
-                                                    <?php if ($get_emps->emp_active == 1) { ?>
+                                                    <?php if ($get_emps->emp_active == 1) {?>
                                                         <span class="badge badge-success">Active</span><?php
-                                                                                                    } else { ?>
+} else {?>
                                                         <span class="badge badge-danger">Deactive</span>
-                                                    <?php   } ?>
+                                                    <?php }?>
                                                 </td>
 
                                                 <td>
@@ -121,14 +121,14 @@
                                                         <div class="col">
 
                                                             <form method="post" action="<?php echo base_url('portal/setup/change_emp_status'); ?>" <?php if ($get_emps->emp_active == 1) {
-                                                                                                                                                        echo "hidden";
-                                                                                                                                                    }
-                                                                                                                                                    ?>>
+            echo "hidden";
+        }
+        ?>>
                                                                 <input type="hidden" value=" <?php echo $get_emps->emp_id; ?>" id="emp_id" name="emp_id">
                                                                 <input type="hidden" value=" <?php echo $get_emps->emp_role_id; ?>" id="emp_role_id" name="emp_role_id">
                                                                 <input type="hidden" value="<?php {
-                                                                                                echo 1;
-                                                                                            } ?>" name="emp_status">
+            echo 1;
+        }?>" name="emp_status">
                                                                 <button class="btn btn btn-success " type="submit" name="active_btn"> <span><i class="fa fa-pencil" aria-hidden="true"></i></span>
                                                                     Active
                                                                 </button>
@@ -136,14 +136,14 @@
 
 
                                                             <form method="post" action="<?php echo base_url('portal/setup/change_emp_status'); ?>" <?php if ($get_emps->emp_active == 0) {
-                                                                                                                                                        echo "hidden";
-                                                                                                                                                    }
-                                                                                                                                                    ?>>
+            echo "hidden";
+        }
+        ?>>
                                                                 <input type="hidden" value=" <?php echo $get_emps->emp_id; ?>" id="emp_id" name="emp_id">
                                                                 <input type="hidden" value=" <?php echo $get_emps->emp_role_id; ?>" id="emp_role_id" name="emp_role_id">
                                                                 <input type="hidden" value="<?php {
-                                                                                                echo 0;
-                                                                                            } ?>" name="emp_status">
+            echo 0;
+        }?>" name="emp_status">
                                                                 <button class="btn btn btn-secondary " type="submit" name="deactive_btn"><span><i class="fa fa-pencil" aria-hidden="true"></i></span>
                                                                     Deactive
                                                                 </button>
@@ -175,15 +175,15 @@
                                                 </td>
                                             </tr>
                                     <?php
-                                            $i++;
-                                        }
-                                    }
-                                    ?>
+$i++;
+    }
+}
+?>
 
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>ID</th>
+                                        <!-- <th>ID</th> -->
                                         <th>NIC</th>
                                         <th>Name</th>
                                         <th>Lorry</th>
@@ -225,12 +225,12 @@
                                     <option disabled selected="selected">Select Lorry</option>
                                     <?php $i = 0;
 
-                                    foreach ($get_lorry as $get_lorrys) {
+foreach ($get_lorry as $get_lorrys) {
 
-                                    ?>
+    ?>
 
                                         <option value="<?php echo $get_lorrys->lor_id; ?>"><?php echo $get_lorrys->lor_name; ?></option>
-                                    <?php } ?>
+                                    <?php }?>
                                 </select>
                             </div>
                             <div class="form-group">
