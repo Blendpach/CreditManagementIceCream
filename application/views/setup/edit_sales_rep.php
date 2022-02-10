@@ -52,6 +52,8 @@ foreach ($get_emp_by_id as $row) {
     $emp_nic = $row->emp_nic;
     $emp_contact = $row->emp_contact;
     $emp_email = $row->emp_email;
+    $emp_basic = $row->emp_basic;
+    $emp_rate = $row->emp_rate;
 }
 ?>
 
@@ -81,12 +83,12 @@ foreach ($get_emp_by_id as $row) {
 
               <div class="form-group">
                   <label for="user_eno">Sales Rep Basic Salary</label>
-                  <input type="email" class="form-control" id="emp_email" value="<?php echo $emp_email; ?>"  name="emp_email" placeholder="emp Basic Salary">
+                  <input type="email" class="form-control" id="emp_basicsal" value="<?php echo $emp_basic; ?>"  name="emp_email" placeholder="emp Basic Salary">
               </div>
 
               <div class="form-group">
                   <label for="user_eno">Sales Rep Bonus Rate</label>
-                  <input type="email" class="form-control" id="emp_email" value="<?php echo $emp_email; ?>"  name="emp_email" placeholder="emp Bonus Rate Eg = 0.25">
+                  <input type="email" class="form-control" id="emp_bonusrate" value="<?php echo $emp_rate; ?>"  name="emp_email" placeholder="emp Bonus Rate Eg = 0.25">
               </div>
 
 

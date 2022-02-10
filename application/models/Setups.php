@@ -73,7 +73,6 @@ class Setups extends CI_Model
         $emp_basic = $this->input->post('emp_salary');
         $emp_rate = $this->input->post('emp_bonus');
 
-
         $insert_to_emp = array(
 
             // 'emp_id' => $emp_id,
@@ -248,6 +247,8 @@ class Setups extends CI_Model
         $emp_email = "";
         $emp_date = "";
         $emp_cid = "";
+        $emp_basic = "";
+        $emp_rate = "";
         //$emp_lorry = "";
 
         $emp_id = $this->input->post('emp_id');
@@ -258,6 +259,8 @@ class Setups extends CI_Model
         $emp_date = $this->input->post('emp_date');
         $emp_cid = $this->session->userdata('passed_user_national');
         //$emp_lorry = $this->session->userdata('emp_lorry');
+        $emp_basic = $this->input->post('emp_basicsal');
+        $emp_rate = $this->input->post('emp_bonusrate');
 
         $update_emp = array(
             'emp_name' => $emp_name,
@@ -266,6 +269,8 @@ class Setups extends CI_Model
             'emp_email' => $emp_email,
             'emp_date' => $emp_date,
             'emp_cid' => $emp_cid,
+            'emp_basic' => $emp_basic,
+            'emp_rate' => $emp_rate,
             //'emp_lorry' => $emp_lorry,
         );
 
