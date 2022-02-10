@@ -41,10 +41,32 @@
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Dashboard
-
             </p>
           </a>
         </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <p>Inventory</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="<?php echo base_url(); ?>portal/stock/action/stockin" class="nav-link">
+            <i class="nav-icon fa fa-arrow-up"></i>
+            <p>Stock In</p>
+          </a>
+        </li>
+
+
+        <li class="nav-item">
+          <a href="<?php echo base_url(); ?>portal/stock/action/viewinventory" class="nav-link">
+            <i class="nav-icon fa fa-arrow-up"></i>
+            <p>View Inventory</p>
+          </a>
+        </li>
+
+
         <li class="nav-item">
           <a href="#" class="nav-link">
 
