@@ -56,6 +56,8 @@
                                         <th>Status</th>
                                         <th>Added Date</th>
                                         <th>Emp CID</th>
+                                        <th>Basic Salary</th>
+                                        <th>Commission</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -102,6 +104,13 @@
                                                 </td>
                                                 <td>
                                                     <?php echo $get_emps->emp_cid; ?>
+                                                </td>
+
+                                                <td>
+                                                    <?php echo $get_emps->emp_basic; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $get_emps->emp_rate; ?>
                                                 </td>
 
                                                 <td style="text-align:center">
@@ -183,6 +192,8 @@
                                         <th>Status</th>
                                         <th>Added Date</th>
                                         <th>Emp CID</th>
+                                        <th>Basic Salary</th>
+                                        <th>Commission</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
