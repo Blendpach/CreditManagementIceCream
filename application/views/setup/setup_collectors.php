@@ -245,6 +245,14 @@
                                 <label for="user_eno">Collector Email</label>
                                 <input type="email" class="form-control" id="emp_email" name="emp_email" placeholder="emp Email">
                             </div>
+                            <div class="form-group">
+                                <label for="user_eno">Basic Salary</label>
+                                <input type="number" class="form-control" id="emp_salary" name="emp_salary" placeholder="Basic Salary">
+                            </div>
+                            <div class="form-group">
+                                <label for="user_eno">Bonus Rate</label>
+                                <input type="number" class="form-control" id="emp_bonus" name="emp_bonus" placeholder="Rate Bonus">
+                            </div>
 
                             <input type="hidden" class="form-control" value=<?php echo EMP_ROLE_COLLECTORS; ?> id="emp_role_id" name="emp_role_id" placeholder="Emp Name">
                         </div>
