@@ -21,6 +21,7 @@ class Setup extends CI_Controller
 
         $data['get_lorry'] = $this->setups->get_lorry();
         $data['get_emp'] = $this->setups->get_emp(); 
+        $data['get_pro'] = $this->setups->get_pro(); 
 
         $data['get_salesEmp'] = $this->setups->get_salesEmp(); 
         $data['get_collectorEmp'] = $this->setups->get_collectorEmp(); 
