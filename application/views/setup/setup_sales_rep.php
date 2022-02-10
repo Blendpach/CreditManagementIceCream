@@ -47,7 +47,7 @@ $date = date('d-m-y h:i:s');
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <!-- <th>ID</th> -->
+                                        <th>ID</th>
                                         <th>NIC</th>
                                         <th>Name</th>
                                         <th>Lorry</th>
@@ -72,9 +72,9 @@ foreach ($get_emp as $get_emps) {
         ?>
 
                                             <tr>
-                                                <!-- <td>
+                                                <td>
                                                     <?php echo $i; ?>
-                                                </td> -->
+                                                </td>
                                                 <td>
                                                     <?php echo $get_emps->emp_nic; ?>
                                                 </td>
@@ -183,7 +183,7 @@ $i++;
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <!-- <th>ID</th> -->
+                                        <th>ID</th>
                                         <th>NIC</th>
                                         <th>Name</th>
                                         <th>Lorry</th>
