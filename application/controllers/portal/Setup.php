@@ -40,6 +40,14 @@ class Setup extends CI_Controller
             $data['get_emp_by_id'] = $this->setups->get_emp_by_id($emp_id);
         }
 
+
+        $pro_id = "";
+        if (isset($_GET["pro_id"])) {
+            $pro_id =  $_GET["pro_id"];
+            $data['get_pro_by_id'] = $this->setups->get_pro_by_id($pro_id);
+        }
+
+
         $emp_id = "";
         if (isset($_GET["record_id"])) {
             $record_id =  $_GET["record_id"];
@@ -331,6 +339,25 @@ class Setup extends CI_Controller
                     redirect('portal/setup/action/setup_collectors');
                 }
             }
+        }
+    }
+
+
+    public function update_pro()
+    {
+
+        if (isset($_POST['update_pro']) && isset($_POST['pro_id'])) {
+
+            $this->load->model('setups');
+
+        
+
+                if ($this->setups->update_pro()) {
+                    // set flash data
+                    $this->session->set_flashdata('success', 'Product Edited Successfully');
+                    redirect('portal/setup/action/edit_product');
+                }
+           
         }
     }
 
