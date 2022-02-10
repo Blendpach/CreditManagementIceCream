@@ -98,6 +98,57 @@ class Setups extends CI_Model
         return $this->db->get('lorry')->result();
     }
 
+    public function pro_validate()
+    {
+        $arr['pro_sku'] = $this->input->post('pro_sku');
+
+
+        return $this->db->get_where('product', $arr)->row();
+    }
+
+    public function add_pro()
+    {
+
+        $pro_name = "";
+        $pro_sku = "";
+        $pro_desc = "";
+        $pro_cid = "";
+        $pro_date = "";
+        $pro_active = 0;
+
+        $pro_name = $this->input->post('pro_name');
+
+        $pro_sku = $this->input->post('pro_sku');
+        $pro_desc = $this->input->post('pro_desc');
+        $pro_cid = $this->session->userdata('passed_user_national');
+        $pro_date = $this->input->post('pro_date');
+        // $pro_active = $this->input->post('pro_active');
+
+
+
+        $insert_to_emp = array(
+
+            // 'emp_id' => $emp_id,
+            'pro_name' => $pro_name,
+            'pro_sku' => $pro_sku,
+            'pro_desc' => $pro_desc,
+            'pro_cid' => $pro_cid,
+            'pro_date' => $pro_date,
+            'pro_active' => $pro_active,
+
+
+        );
+
+        $this->db->insert('product', $insert_to_emp);
+
+        return true;
+    }
+
+    public function get_pro()
+    {
+        return $this->db->get('product')->result();
+    }
+
     public function get_salesEmp()
     {
         $arr['emp_role_id'] = EMP_ROLE_SALES_REP;
