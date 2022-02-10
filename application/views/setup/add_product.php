@@ -61,11 +61,9 @@
                                 <tbody>
                                     <?php $i = 1;
 
-                                    foreach ($get_emp as $get_emps) {
+                                    foreach ($get_pro as $get_pros) {
 
-                                        // filter by role ID
-                                        if ($get_emps->emp_role_id == EMP_ROLE_COLLECTORS) {
-
+                                     
                                     ?>
 
                                             <tr>
@@ -73,23 +71,23 @@
                                                     <?php echo $i; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $get_emps->emp_nic; ?>
+                                                    <?php echo $get_pros->pro_name; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $get_emps->emp_name; ?>
+                                                    <?php echo $get_pros->pro_sku; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $get_emps->lor_name; ?>
+                                                    <?php echo $get_pros->pro_desc; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $get_emps->emp_contact; ?>
+                                                    <?php echo $get_pros->pro_cid; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $get_emps->emp_email; ?>
+                                                    <?php echo $get_pros->pro_date; ?>
                                                 </td>
 
                                                 <td>
-                                                    <?php if ($get_emps->emp_active == 1) {
+                                                    <?php if ($get_pros->pro_active == 1) {
                                                     ?>
                                                         <span class="badge badge-success">Active</span><?php
                                                                                                     } else { ?>
@@ -97,18 +95,7 @@
                                                     <?php   } ?>
                                                 </td>
 
-                                                <td>
-                                                    <?php echo $get_emps->emp_date; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $get_emps->emp_cid; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $get_emps->emp_basic; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $get_emps->emp_rate; ?>
-                                                </td>
+                                                
                                                 <td style="text-align:center">
 
                                                     <div class="row">
@@ -175,7 +162,7 @@
                                         }
                                         //end if
 
-                                    }
+                                   
                                     ?>
 
                                 </tbody>
@@ -212,56 +199,33 @@
                     </button>
                 </div>
 
-                <form method="post" action="<?php echo base_url('portal/setup/add_emp'); ?>">
+                <form method="post" action="<?php echo base_url('portal/setup/add_pro'); ?>">
                     <div class="modal-body">
                         <div class="row">
 
-                            <div class="form-group">
-                                <label>Select Lorry</label>
-                                <select class="form-control select2 select2" data-dropdown-css-class="select2" id="emp_lorry" name="emp_lorry" style="width: 100%;">
-                                    <option disabled selected="selected">Select Lorry</option>
-                                    <?php $i = 0;
-
-                                    foreach ($get_lorry as $get_lorrys) {
-
-                                    ?>
-
-                                        <option value="<?php echo $get_lorrys->lor_id; ?>"><?php echo $get_lorrys->lor_name; ?></option>
-                                    <?php } ?>
-                                </select>
-                            </div>
+                            
 
                             <div class="form-group">
-                                <label for="user_eno">Collector Name</label>
-                                <input type="text" class="form-control" id="emp_name" name="emp_name" placeholder="emp Name">
+                                <label for="user_eno">Product Name</label>
+                                <input type="text" class="form-control" id="pro_name" name="pro_name" placeholder="Enter Product Name">
                             </div>
                             <div class="form-group">
-                                <label for="user_eno">Collector NIC</label>
-                                <input type="text" class="form-control" id="emp_nic" name="emp_nic" placeholder="emp NIC">
+                                <label for="user_eno">Product SKU</label>
+                                <input type="text" class="form-control" id="pro_sku" name="pro_sku" placeholder="Enter Product SKU">
                             </div>
                             <div class="form-group">
-                                <label for="user_eno">Collector Contact</label>
-                                <input type="number" class="form-control" id="emp_contact" name="emp_contact" placeholder="emp Contact">
+                                <label for="user_eno">Product Description</label>
+                                <input type="number" class="form-control" id="pro_desc" name="pro_desc" placeholder="Enter Product Description">
                             </div>
                             <div class="form-group">
-                                <label for="user_eno">Collector Email</label>
-                                <input type="email" class="form-control" id="emp_email" name="emp_email" placeholder="emp Email">
+                               
+                                <input type="hidden" class="form-control" id="pro_date" name="pro_date" value="<?php echo $date;  ?>" >
                             </div>
-                            <div class="form-group">
-                                <label for="user_eno">Basic Salary</label>
-                                <input type="number" class="form-control" id="emp_salary" name="emp_salary" placeholder="Basic Salary">
-                            </div>
-                            <div class="form-group">
-                                <label for="user_eno">Bonus Rate</label>
-                                <input type="number" class="form-control" id="emp_bonus" name="emp_bonus" placeholder="Rate Bonus">
-                            </div>
-
-                            <input type="hidden" class="form-control" value=<?php echo EMP_ROLE_COLLECTORS; ?> id="emp_role_id" name="emp_role_id" placeholder="Emp Name">
-                        </div>
+                           </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" name="emp_add" id="emp_add" value="<?php echo $date ?>;" class="btn btn-primary">Submit</button>
+                        <button type="submit" name="pro_add" id="pro_add"  class="btn btn-primary">Submit</button>
                     </div>
                 </form>
 
