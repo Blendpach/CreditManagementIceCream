@@ -16,17 +16,10 @@ class Stock extends CI_Controller
     public function action($page = 'home')
     {
 
-        $this->load->model('setups');
+        $this->load->model('stocks');
+        $data['get_inventory'] = $this->stocks->get_inventory();
 
-        $data['get_lorry'] = $this->setups->get_lorry();
-        $data['get_emp'] = $this->setups->get_emp(); 
 
-        $data['get_salesEmp'] = $this->setups->get_salesEmp(); 
-        $data['get_collectorEmp'] = $this->setups->get_collectorEmp(); 
-
-        $data['get_assignedSalesRep'] = $this->setups->get_assignedSalesRep();  
-        $data['get_assignedCollectors'] = $this->setups->get_assignedCollectors();  
-        
         $lor_id = "";
         if(isset($_GET["lor_id"])){
                 $lor_id =  $_GET["lor_id"];    
@@ -47,7 +40,7 @@ class Stock extends CI_Controller
 
         $sidebar = "";
 
-        if (!file_exists(APPPATH . 'views/setup/' . $page . '.php')) {
+        if (!file_exists(APPPATH . 'views/stock/' . $page . '.php')) {
             
             show_404();
         }
@@ -60,15 +53,43 @@ class Stock extends CI_Controller
         }
         
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/header', $data);
 
         $this->load->view('templates/sidebar/' . $sidebar);
 
-        $this->load->view('setup/' . $page, $data);
+        $this->load->view('stock/' . $page);
         $this->load->view('templates/footer');
 		$this->load->view('templates/formpages/formjs');
+
     }
    
 
+    public function uploadExcel()
+    {
+
+        $this->load->model('stocks');
+
+        if ($this->stocks->uploadExcel()) {
+            // set flash data
+            $this->session->set_flashdata('success', 'Upload Successfully');
+            redirect('portal/stock/action/viewinventory');
+        }
+    }
+
+
+    function delete_inventory()
+    {
+        if (isset($_POST['inv_id'])) {
+       $this->load->model('stocks');
+        if ($this->stocks->delete_inventory()) {
+            // set flash data
+            $this->session->set_flashdata('error', 'Record Deleted Successfully');
+            redirect('portal/stock/action/viewinventory');
+        }
+        }
+    }
+
+
+  
 
 }
