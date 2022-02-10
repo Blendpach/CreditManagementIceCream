@@ -23,7 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |            Currently supported:
 |                 cubrid, ibase, mssql, mysql, mysqli, oci8,
 |                 odbc, pdo, postgre, sqlite, sqlite3, sqlsrv
-|    ['dbprefix'] You can add an optional prefix, which will be added
+|    ['dbprefix'] You can add an optional prefix, which will be addedaa
 |                 to the table name when using the  Query Builder class
 |    ['pconnect'] TRUE/FALSE - Whether to use a persistent connection
 |    ['db_debug'] TRUE/FALSE - Whether database errors should be displayed.
