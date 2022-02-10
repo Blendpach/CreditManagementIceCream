@@ -63,106 +63,86 @@
 
                                     foreach ($get_pro as $get_pros) {
 
-                                     
+
                                     ?>
 
-                                            <tr>
-                                                <td>
-                                                    <?php echo $i; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $get_pros->pro_name; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $get_pros->pro_sku; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $get_pros->pro_desc; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $get_pros->pro_cid; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $get_pros->pro_date; ?>
-                                                </td>
+                                        <tr>
+                                            <td>
+                                                <?php echo $i; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $get_pros->pro_name; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $get_pros->pro_sku; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $get_pros->pro_desc; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $get_pros->pro_cid; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $get_pros->pro_date; ?>
+                                            </td>
 
-                                                <td>
-                                                    <?php if ($get_pros->pro_active == 1) {
-                                                    ?>
-                                                        <span class="badge badge-success">Active</span><?php
-                                                                                                    } else { ?>
-                                                        <span class="badge badge-danger">Deactive</span>
-                                                    <?php   } ?>
-                                                </td>
-
-                                                
-                                                <td style="text-align:center">
-
-                                                    <div class="row">
+                                            <td>
+                                                <?php if ($get_pros->pro_active == 1) {
+                                                ?>
+                                                    <span class="badge badge-success">Active</span><?php
+                                                                                                } else { ?>
+                                                    <span class="badge badge-danger">Deactive</span>
+                                                <?php   } ?>
+                                            </td>
 
 
-                                                        <div class="col">
+                                            <td style="text-align:center">
 
-                                                            <form method="post" action="<?php echo base_url('portal/setup/change_emp_status'); ?>" <?php if ($get_emps->emp_active == 1) {
-                                                                                                                                                        echo "hidden";
-                                                                                                                                                    }
-                                                                                                                                                    ?>>
-                                                                <input type="hidden" value=" <?php echo $get_emps->emp_id; ?>" id="emp_id" name="emp_id">
-                                                                <input type="hidden" value=" <?php echo $get_emps->emp_role_id; ?>" id="emp_role_id" name="emp_role_id">
-                                                                <input type="hidden" value="<?php {
-                                                                                                echo 1;
-                                                                                            } ?>" name="emp_status">
+                                                <div class="row">
+
+
+                                                    <div class="col">
+
+
+
+
+                                                        <form method="post" action="<?php echo base_url('portal/setup/change_pro_status'); ?>">
+                                                            <input type="hidden" value="<?php echo $get_pros->pro_id; ?>" id="pro_id" name="pro_id">
+                                                            <input type="hidden" value="<?php echo $get_pros->pro_active; ?>" id="pro_active" name="pro_active">
+
+                                                            <?php if ($get_pros->pro_active == 1) { ?> <button class="btn btn btn-secondary " type="submit" name="active_btn"><span><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                                                                    Deactive
+                                                                </button> <?php } else { ?>
                                                                 <button class="btn btn btn-success " type="submit" name="active_btn"> <span><i class="fa fa-pencil" aria-hidden="true"></i></span>
                                                                     Active
-                                                                </button>
-                                                            </form>
+                                                                </button> <?php } ?>
 
 
-                                                            <form method="post" action="<?php echo base_url('portal/setup/change_emp_status'); ?>" <?php if ($get_emps->emp_active == 0) {
-                                                                                                                                                        echo "hidden";
-                                                                                                                                                    }
-                                                                                                                                                    ?>>
-                                                                <input type="hidden" value=" <?php echo $get_emps->emp_id; ?>" id="emp_id" name="emp_id">
-                                                                <input type="hidden" value=" <?php echo $get_emps->emp_role_id; ?>" id="emp_role_id" name="emp_role_id">
-                                                                <input type="hidden" value="<?php {
-                                                                                                echo 0;
-                                                                                            } ?>" name="emp_status">
-                                                                <button class="btn btn btn-secondary " type="submit" name="deactive_btn"><span><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                                                                    Deactive
-                                                                </button>
-                                                            </form>
 
-                                                        </div>
-
-                                                        <div class="col">
-
-                                                            <a class="btn btn btn-primary " href="<?php echo '' . base_url('portal/setup/action/edit_collector?emp_id=') . $get_emps->emp_id . ''; ?>">Edit</a>
-
-                                                        </div>
-
-
-                                                        <!-- <div class="col">
-                                                            <form method="post" action="<?php echo base_url('portal/setup/delete_emp'); ?>">
-
-                                                                <input type="hidden" value=" <?php echo $get_emps->emp_id; ?>" id="emp_id" name="emp_id">
-                                                                <input type="hidden" value=" <?php echo $get_emps->emp_role_id; ?>" id="emp_role_id" name="emp_role_id">
-                                                                <button class="btn btn btn-danger ">
-                                                                    Delete
-                                                                </button>
-                                                            </form>
-                                                        </div> -->
-
+                                                        </form>
 
                                                     </div>
 
-                                                </td>
-                                            </tr>
-                                    <?php
-                                            $i++;
-                                        }
-                                        //end if
+                                                    <div class="col">
 
-                                   
+                                                        <a class="btn btn btn-primary " href="<?php echo '' . base_url('portal/setup/action/edit_collector?emp_id=') . $get_emps->emp_id . ''; ?>">Edit</a>
+
+                                                    </div>
+
+
+
+
+
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                    <?php
+                                        $i++;
+                                    }
+                                    //end if
+
+
                                     ?>
 
                                 </tbody>
@@ -203,7 +183,7 @@
                     <div class="modal-body">
                         <div class="row">
 
-                            
+
 
                             <div class="form-group">
                                 <label for="user_eno">Product Name</label>
@@ -218,14 +198,14 @@
                                 <input type="number" class="form-control" id="pro_desc" name="pro_desc" placeholder="Enter Product Description">
                             </div>
                             <div class="form-group">
-                               
-                                <input type="hidden" class="form-control" id="pro_date" name="pro_date" value="<?php echo $date;  ?>" >
+
+                                <input type="hidden" class="form-control" id="pro_date" name="pro_date" value="<?php echo $date;  ?>">
                             </div>
-                           </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" name="pro_add" id="pro_add"  class="btn btn-primary">Submit</button>
+                        <button type="submit" name="pro_add" id="pro_add" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
 

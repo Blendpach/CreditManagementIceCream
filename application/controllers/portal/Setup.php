@@ -218,6 +218,18 @@ class Setup extends CI_Controller
         }
     }
 
+    function change_pro_status()
+    {
+        if (isset($_POST['pro_id'])) {
+
+            $this->load->model('setups');
+            if ($this->setups->change_pro_status()) {
+
+                $this->session->set_flashdata('success', 'Product Status Updated Successfully');
+                redirect('portal/setup/action/add_product');
+            }
+        }
+    }
 
     function change_emp_status()
     {
