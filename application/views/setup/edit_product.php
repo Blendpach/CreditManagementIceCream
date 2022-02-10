@@ -61,32 +61,32 @@ $date = date('d-m-y h:i:s');
             <input type="hidden" class="form-control" id="pro_id" value="<?php echo $pro_id; ?>"  name="pro_id" placeholder="emp Email">
 
               <div class="form-group">
-                  <label for="user_eno">Collector Name</label>
+                  <label for="user_eno">Product Name</label>
                   <input type="text" class="form-control" value="<?php echo $pro_name; ?>" id="pro_name" name="pro_name" placeholder="emp Name">
               </div>
 
               <div class="form-group">
-                  <label for="user_eno">Collector NIC</label>
+                  <label for="user_eno">Product SKU</label>
                   <input type="text" class="form-control" id="pro_sku" value="<?php echo $pro_sku; ?>"  name="pro_sku" placeholder="emp NIC">
               </div>
 
               <div class="form-group">
-                  <label for="user_eno">Collector Contact</label>
+                  <label for="user_eno">Product Description</label>
                   <input type="number" class="form-control" id="pro_desc" value="<?php echo $pro_desc; ?>"  name="pro_desc" placeholder="emp Contact">
               </div>
 
               <div class="form-group">
-                  <label for="user_eno">Collector Email</label>
+                  <label for="user_eno">Product CID</label>
                   <input type="email" class="form-control" id="pro_cid" value="<?php echo $pro_cid; ?>"  name="pro_cid" placeholder="emp Email">
               </div>
               <div class="form-group">
-                  <label for="user_eno">Collector Email</label>
-                  <input type="email" class="form-control" id="pro_date" value="<?php echo $pro_date; ?>"  name="pro_date" placeholder="emp Email">
+                  <label for="user_eno">Product Date</label>
+                  <input type="email" class="form-control" id="pro_date" value="<?php echo $pro_date; ?>"  name="pro_date" placeholder="emp Email" disabled>
               </div>
-              <div class="form-group">
-                  <label for="user_eno">Collector Email</label>
+              <!-- <div class="form-group">
+                  <label for="user_eno">Product Email</label>
                   <input type="email" class="form-control" id="pro_active" value="<?php echo $pro_active; ?>"  name="pro_active" placeholder="emp Email">
-              </div>
+              </div> -->
 
               </div>
 

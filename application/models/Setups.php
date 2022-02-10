@@ -367,14 +367,14 @@ class Setups extends CI_Model
         $pro_desc = "";
         $pro_cid = "";
         $pro_date = "";
-        $pro_active = 0;
+       // $pro_active = 0;
 
         $pro_id = $this->input->post('pro_id');
         $pro_name = $this->input->post('pro_name');
         $pro_sku = $this->input->post('pro_sku');
         $pro_desc = $this->input->post('pro_desc');
         $pro_cid = $this->session->userdata('passed_user_national');
-        $pro_date = $this->input->post('pro_date');
+       // $pro_date = $this->input->post('pro_date');
         // $pro_active = $this->input->post('pro_active');
 
 
@@ -386,8 +386,8 @@ class Setups extends CI_Model
             'pro_sku' => $pro_sku,
             'pro_desc' => $pro_desc,
             'pro_cid' => $pro_cid,
-            'pro_date' => $pro_date,
-            'pro_active' => $pro_active,
+            //'pro_date' => $pro_date,
+           // 'pro_active' => $pro_active,
 
 
         );
