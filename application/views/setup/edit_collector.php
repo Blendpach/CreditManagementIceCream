@@ -1,5 +1,5 @@
 <!-- Content Wrapper. Contains page content -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
@@ -39,24 +39,27 @@ $date = date('d-m-y h:i:s');
         </div>
         <!-- /.card-header -->
         <form method="post" action="<?php echo base_url('portal/setup/update_emp'); ?>">
-         
+
           <div class="card-body">
-          
-          <?php 
-          
-          foreach ($get_emp_by_id as $row) { 
-            $emp_id = $row->emp_id;
-            $emp_role_id = $row->emp_role_id;
-            $emp_nic = $row->emp_nic;
-            $emp_name = $row->emp_name;          
-            $emp_nic = $row->emp_nic;           
-            $emp_contact = $row->emp_contact; 
-            $emp_email = $row->emp_email; 
-          }
-          ?>
-          
+
+          <?php
+
+foreach ($get_emp_by_id as $row) {
+    $emp_id = $row->emp_id;
+    $emp_role_id = $row->emp_role_id;
+    $emp_nic = $row->emp_nic;
+    $emp_name = $row->emp_name;
+    $emp_nic = $row->emp_nic;
+    $emp_contact = $row->emp_contact;
+    $emp_email = $row->emp_email;
+    $emp_basic = $row->emp_basic;
+    $emp_rate = $row->emp_rate;
+
+}
+?>
+
             <div class="row">
-            
+
 
 
               <div class="form-group">
@@ -79,8 +82,18 @@ $date = date('d-m-y h:i:s');
                   <input type="email" class="form-control" id="emp_email" value="<?php echo $emp_email; ?>"  name="emp_email" placeholder="emp Email">
               </div>
 
-              <input type="hidden" class="form-control" value=<?php echo EMP_ROLE_COLLECTORS;?> id="emp_role_id" name="emp_role_id">
-              <input type="hidden" class="form-control" value=<?php echo $date;?> id="emp_date" name="emp_date">
+              <div class="form-group">
+                  <label for="user_eno">Sales Rep Basic Salary</label>
+                  <input type="text" class="form-control" id="emp_basicsal" value="<?php echo $emp_basic; ?>"  name="emp_basicsal" placeholder="emp Basic Salary">
+              </div>
+
+              <div class="form-group">
+                  <label for="user_eno">Sales Rep Bonus Rate</label>
+                  <input type="text" class="form-control" id="emp_bonusrate" value="<?php echo $emp_rate; ?>"  name="emp_bonusrate" placeholder="emp Bonus Rate Eg = 0.25">
+              </div>
+
+              <input type="hidden" class="form-control" value=<?php echo EMP_ROLE_COLLECTORS; ?> id="emp_role_id" name="emp_role_id">
+              <input type="hidden" class="form-control" value=<?php echo $date; ?> id="emp_date" name="emp_date">
               <input  type=hidden class="form-control"name="emp_id" value="<?php echo $emp_id; ?>" >
 
 
@@ -99,7 +112,7 @@ $date = date('d-m-y h:i:s');
           <!-- /.col -->
       </div>
       <!-- /.row -->
-     
+
 
       <!-- /.row -->
     </div>
