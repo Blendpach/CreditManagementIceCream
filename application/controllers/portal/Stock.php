@@ -48,7 +48,7 @@ class Stock extends CI_Controller
         $sidebar = "";
 
         if (!file_exists(APPPATH . 'views/setup/' . $page . '.php')) {
-            // Whoops, we don't have a page for that!
+            
             show_404();
         }
 
