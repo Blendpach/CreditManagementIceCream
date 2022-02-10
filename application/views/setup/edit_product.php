@@ -72,12 +72,12 @@ $date = date('d-m-y h:i:s');
 
               <div class="form-group">
                   <label for="user_eno">Product Description</label>
-                  <input type="number" class="form-control" id="pro_desc" value="<?php echo $pro_desc; ?>"  name="pro_desc" placeholder="emp Contact">
+                  <textarea rows="5" class="form-control" id="pro_desc" value="<?php echo $pro_desc; ?>"  name="pro_desc" placeholder="emp Contact"></textarea>
               </div>
 
               <div class="form-group">
                   <label for="user_eno">Product CID</label>
-                  <input type="email" class="form-control" id="pro_cid" value="<?php echo $pro_cid; ?>"  name="pro_cid" placeholder="emp Email">
+                  <input type="text" class="form-control" id="pro_cid" value="<?php echo $pro_cid; ?>"  name="pro_cid" placeholder="emp Email" disabled>
               </div>
               <div class="form-group">
                   <label for="user_eno">Product Date</label>
