@@ -230,6 +230,7 @@ class Stocks extends CI_Model
 
             }
         }
+        //TODO - OUT OF THE MODE , INSIDE THE CONTROLLER WE HAVE TO UNSET ALL THE SESSION WITH KEY AS PRODUCT ID. IT CAN BE DONE BY ANOTHER METHOD IF WHOLE PROCESS GETTING SLOW.
     }
 
     public function get_inventory()
