@@ -58,10 +58,16 @@
           </a>
         </li>
 
+        <li class="nav-item">
+          <a href="<?php echo base_url(); ?>portal/stock/action/stockout" class="nav-link">
+            <i class="nav-icon fa fa-arrow-down"></i>
+            <p>Stock Out</p>
+          </a>
+        </li>
 
         <li class="nav-item">
           <a href="<?php echo base_url(); ?>portal/stock/action/viewinventory" class="nav-link">
-            <i class="nav-icon fa fa-arrow-up"></i>
+            <i class="nav-icon fa fa-file"></i>
             <p>View Inventory</p>
           </a>
         </li>
@@ -194,8 +200,6 @@
               </a>
             </li>
 
-
-
             <li class="nav-item">
 
               <a class="nav-link">
@@ -210,18 +214,8 @@
               </a>
             </li>
 
-
-
-
-
           </ul>
         </li>
-
-
-
-
-
-
 
     </nav>
     <!-- /.sidebar-menu -->

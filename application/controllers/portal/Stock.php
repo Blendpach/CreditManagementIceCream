@@ -19,6 +19,8 @@ class Stock extends CI_Controller
         $this->load->model('stocks');
         $data['get_inventory'] = $this->stocks->get_inventory();
 
+        $this->load->model('setups');
+        $data['get_lorry'] = $this->setups->get_lorry();
 
         $lor_id = "";
         if(isset($_GET["lor_id"])){
@@ -75,6 +77,21 @@ class Stock extends CI_Controller
             redirect('portal/stock/action/viewinventory');
         }
     }
+
+
+    public function uploadStockOutExcel()
+    {
+
+        $this->load->model('stocks');
+
+        if ($this->stocks->uploadStockOutExcel()) {
+            $this->session->set_flashdata('success', 'Upload and Stock Update Successfully');
+            redirect('portal/stock/action/viewinventory');
+        }
+    }
+
+
+    
 
 
     function delete_inventory()
