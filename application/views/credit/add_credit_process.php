@@ -67,19 +67,14 @@
                                     </select>
                                 </div>
 
-
                                 <div class="form-group">
                                     <label for="user_eno">Collector / Sales Rep</label>
                                     <select class="form-control select2 select2" data-dropdown-css-class="select2" id="credit_collect" name="credit_collect" style="width: 100%;" required>
 
                                     </select>
-
-                                    <!-- <input type="text" class="form-control" id="credit_collect" name="credit_collect" placeholder="Product Name"> -->
                                 </div>
 
-
                                 <div class="form-group">
-
                                     <input type="hidden" class="form-control" id="credit_cid" name="credit_cid" value="<?php echo $_SESSION['passed_user_national']; ?>">
                                 </div>
 
@@ -166,4 +161,6 @@
             });
 
     }
+
+    
 </script>

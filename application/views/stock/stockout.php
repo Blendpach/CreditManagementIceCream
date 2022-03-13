@@ -39,13 +39,12 @@ $date = date('y-m-d');
                 <div class="card-body">
 
 
-                    <form method="post" action="<?php echo base_url('portal/stock/uploadExcel'); ?>" name="upload_excel" enctype="multipart/form-data">
+                    <form method="post" action="<?php echo base_url('portal/stock/uploadStockOutExcel'); ?>" name="upload_excel" enctype="multipart/form-data">
                         <div class="modal-body">
 
                             <div class="row">
 
                                 <div class="form-group">
-
                                     <input type="hidden" class="form-control" id="credit_cid" name="credit_cid" value="<?php echo $_SESSION['passed_user_national']; ?>">
                                 </div>
                               
@@ -58,7 +57,7 @@ $date = date('y-m-d');
 
                                 <label for="exampleInputEmail1">Stock Out Description</label>
 
-                                <textarea rows="5" class="form-control" id="stock_desc" name="stock_desc" placeholder="Lorry Description"></textarea>
+                                <textarea rows="5" class="form-control" id="stock_desc" name="stock_desc" placeholder="Stock Out Description"></textarea>
                                 </div>
 
                                 <div class="form-group">
